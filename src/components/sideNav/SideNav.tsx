@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SideNav.module.scss';
 import Logo from '../../assests/icons/logo.svg';
 import Grid from '../../assests/icons/grid.svg';
@@ -11,52 +11,63 @@ import Truck from '../../assests/icons/truck.svg';
 import Profile from '../../assests/images/profile.png';
 import Image from 'next/image';
 import { P2 } from '../shared/headings/Heading';
+import styles from './SideNav.module.scss';
+import Link from 'next/link';
 
 const SideNav = () => {
+
+    const [active, setActive] = useState('')
+
+    const handleActive = (option: string) => {
+        setActive(option)
+    }
+
     return (
-        <div className='hidden lg:flex md:flex-col md:justify-between md:bg-white md:border-r md:border-[#EAEDEC] md:h-screen md:px-9 md:py-20'>
-            <Logo className='mb-11'/>
+        <div className={styles.sideNavContainer}>
+            <Logo className='mb-11' />
 
             <div>
-                <div className='flex flex-col md:items-center t min-[1440px]:items-start gap-5'>
-                    <div className='flex items-center gap-3'>
+                <div className={styles.sideNavLinksContainer}>
+                    <div onClick={() => handleActive('Menu')} className={active === 'Menu' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                         <Grid className='text-[#6F7A8D]' />
-                        <P2 className='lg:hidden min-[1440px]:block text-[#6F7A8D]'>Home</P2>
+                        <P2 className={active === 'Menu' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Home</P2>
                     </div>
 
-                    <div className='flex items-center gap-3'>
+                    <div onClick={() => handleActive('Card')} className={active === 'Card' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                         <Card />
-                        <P2 className='lg:hidden min-[1440px]:block text-[#6F7A8D]'>My Order</P2>
+                        <P2 className={active === 'Card' ? styles.sideNavOptionsActive : styles.sideNavOptions}>My Order</P2>
                     </div>
 
-                    <div className='flex items-center gap-3'>
+                    <div onClick={() => handleActive('Money')} className={active === 'Money' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                         <Money />
-                        <P2 className='lg:hidden min-[1440px]:block text-[#6F7A8D] whitespace-nowrap'>My Transactions</P2>
+                        <P2 className={`${active === 'Money' ? styles.sideNavOptionsActive : styles.sideNavOptions} whitespace-nowrap`}>My Transactions</P2>
                     </div>
 
-                    <div className='flex items-center gap-3'>
+                    <div onClick={() => handleActive('Wallet')} className={active === 'Wallet' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                         <Wallet />
-                        <P2 className='lg:hidden min-[1440px]:block text-[#6F7A8D]'> My Wallet</P2>
+                        <P2 className={active === 'Wallet' ? styles.sideNavOptionsActive : styles.sideNavOptions}> My Wallet</P2>
                     </div>
 
-                    <div className='flex items-center gap-3'>
+                    <div onClick={() => handleActive('Orders')} className={active === 'Orders' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                         <Truck />
-                        <P2 className='lg:hidden min-[1440px]:block text-[#6F7A8D]'>Track Orders</P2>
+                        <P2 className={active === 'Orders' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Track Orders</P2>
                     </div>
                 </div>
 
                 <hr className='w-full h-[1px] border border-[#E4E4E4] my-10' />
 
                 <div className='flex flex-col lg:items-center min-[1440px]:items-start gap-5'>
-                    <div className='flex items-center gap-3'>
+                    <div onClick={() => handleActive('Support')} className={active === 'Support' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                         <Support />
-                        <P2 className='lg:hidden min-[1440px]:block text-[#6F7A8D]'>Support</P2>
+                        <P2 className={active === 'Support' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Support</P2>
                     </div>
 
-                    <div className='flex items-center gap-3'>
-                        <Question />
-                        <P2 className='lg:hidden min-[1440px]:block  text-[#6F7A8D]'>FAQS</P2>
-                    </div>
+                    <Link href='/faq'>
+                        <div onClick={() => handleActive('Faqs')} className={active === 'Faqs' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Question />
+                            <P2 className={active === 'Faqs' ? styles.sideNavOptionsActive : styles.sideNavOptions}>FAQS</P2>
+                        </div>
+                    </Link>
                 </div>
             </div>
 
