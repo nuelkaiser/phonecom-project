@@ -13,6 +13,7 @@ import Image from 'next/image';
 import { P2 } from '../shared/headings/Heading';
 import styles from './SideNav.module.scss';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const SideNav = () => {
 
@@ -22,48 +23,62 @@ const SideNav = () => {
         setActive(option)
     }
 
+    const router = useRouter();
+
     return (
         <div className={styles.sideNavContainer}>
             <Logo className='mb-11' />
 
             <div>
                 <div className={styles.sideNavLinksContainer}>
-                    <div onClick={() => handleActive('Menu')} className={active === 'Menu' ? styles.sideNavLinksActive : styles.sideNavLinks}>
-                        <Grid className='text-[#6F7A8D]' />
-                        <P2 className={active === 'Menu' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Home</P2>
-                    </div>
+                    <Link href='/'>
+                        <div onClick={() => handleActive('Menu')} className={router.pathname === '/' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Grid className='text-[#6F7A8D]' />
+                            <P2 className={active === 'Menu' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Home</P2>
+                        </div>
+                    </Link>
 
-                    <div onClick={() => handleActive('Card')} className={active === 'Card' ? styles.sideNavLinksActive : styles.sideNavLinks}>
-                        <Card />
-                        <P2 className={active === 'Card' ? styles.sideNavOptionsActive : styles.sideNavOptions}>My Order</P2>
-                    </div>
+                    <Link href='/order'>
+                        <div onClick={() => handleActive('Card')} className={router.pathname === '/order' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Card />
+                            <P2 className={active === 'Card' ? styles.sideNavOptionsActive : styles.sideNavOptions}>My Order</P2>
+                        </div>
+                    </Link>
 
-                    <div onClick={() => handleActive('Money')} className={active === 'Money' ? styles.sideNavLinksActive : styles.sideNavLinks}>
-                        <Money />
-                        <P2 className={`${active === 'Money' ? styles.sideNavOptionsActive : styles.sideNavOptions} whitespace-nowrap`}>My Transactions</P2>
-                    </div>
+                    <Link href='/transaction'>
+                        <div onClick={() => handleActive('Money')} className={router.pathname === '/transaction' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Money />
+                            <P2 className={`${active === 'Money' ? styles.sideNavOptionsActive : styles.sideNavOptions} whitespace-nowrap`}>My Transactions</P2>
+                        </div>
+                    </Link>
 
-                    <div onClick={() => handleActive('Wallet')} className={active === 'Wallet' ? styles.sideNavLinksActive : styles.sideNavLinks}>
-                        <Wallet />
-                        <P2 className={active === 'Wallet' ? styles.sideNavOptionsActive : styles.sideNavOptions}> My Wallet</P2>
-                    </div>
+                    <Link href='/wallet'>
+                        <div onClick={() => handleActive('Wallet')} className={router.pathname === '/wallet' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Wallet />
+                            <P2 className={active === 'Wallet' ? styles.sideNavOptionsActive : styles.sideNavOptions}> My Wallet</P2>
+                        </div>
+                    </Link>
 
-                    <div onClick={() => handleActive('Orders')} className={active === 'Orders' ? styles.sideNavLinksActive : styles.sideNavLinks}>
-                        <Truck />
-                        <P2 className={active === 'Orders' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Track Orders</P2>
-                    </div>
+                    <Link href='/track-order'>
+                        <div onClick={() => handleActive('Orders')} className={router.pathname === '/track-order' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Truck />
+                            <P2 className={active === 'Orders' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Track Orders</P2>
+                        </div>
+                    </Link>
                 </div>
 
                 <hr className='w-full h-[1px] border border-[#E4E4E4] my-10' />
 
                 <div className='flex flex-col lg:items-center min-[1440px]:items-start gap-5'>
-                    <div onClick={() => handleActive('Support')} className={active === 'Support' ? styles.sideNavLinksActive : styles.sideNavLinks}>
-                        <Support />
-                        <P2 className={active === 'Support' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Support</P2>
-                    </div>
+                    <Link href='/support'>
+                        <div onClick={() => handleActive('Support')} className={router.pathname === '/support' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                            <Support />
+                            <P2 className={active === 'Support' ? styles.sideNavOptionsActive : styles.sideNavOptions}>Support</P2>
+                        </div>
+                    </Link>
 
                     <Link href='/faq'>
-                        <div onClick={() => handleActive('Faqs')} className={active === 'Faqs' ? styles.sideNavLinksActive : styles.sideNavLinks}>
+                        <div onClick={() => handleActive('Faqs')} className={router.pathname === '/faq' ? styles.sideNavLinksActive : styles.sideNavLinks}>
                             <Question />
                             <P2 className={active === 'Faqs' ? styles.sideNavOptionsActive : styles.sideNavOptions}>FAQS</P2>
                         </div>
