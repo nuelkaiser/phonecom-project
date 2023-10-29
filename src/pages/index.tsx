@@ -4,8 +4,6 @@ import Notification from "@/components/modals/notifical-modal/Notification";
 import SideNav from "@/components/sideNav/SideNav";
 
 const index = () => {
-
-
   return (
     <div className="bg-[white] h-screen">
       <Notification />
@@ -13,9 +11,8 @@ const index = () => {
         <SideNav />
         <Nav />
       </div>
-
     </div>
-  )
+  );
 };
 
 export default index;
