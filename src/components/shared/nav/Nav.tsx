@@ -39,7 +39,7 @@ const Nav = () => {
     }
 
     return (
-        <div>
+        <div className='w-full'>
             <div className={openMenu ? `bg-[#FFFFFF] flex items-center justify-between pt-10 pb-7 px-8` : `bg-[#FFFFFF] flex items-center justify-between pt-10 pb-7 px-8 border-b border-b-[#EAEDEC]`}>
                 <div className='flex items-center gap-3  md:hidden'>
                     {
@@ -67,7 +67,7 @@ const Nav = () => {
 
                 <div className='hidden md:flex'>
                     <div className='flex items-center gap-2'>
-                        <SearchBar placeholder='Search for Phone Assessories' className='lg:w-[500px] min-[1440px]:w-[646px]' />
+                        <SearchBar placeholder='Search for Phone Assessories' className='lg:w-[400px] min-[1440px]:w-[646px]' />
                         <Button size='lg' color='secondary' className='text-white '>
                             Search
                         </Button>
