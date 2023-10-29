@@ -5,6 +5,7 @@ import SearchBar from "@/components/shared/inputs/searchbar/SearchBar";
 import React, { useState } from "react";
 import SearchIcon from '../assests/icons/search.svg';
 import Nav from "@/components/shared/nav/Nav";
+import Notification from "@/components/modals/notifical-modal/Notification";
 
 const index = () => {
 
@@ -16,7 +17,8 @@ const index = () => {
   }
 
   return (
-    <div className="bg-[#606060] h-screen">
+    <div className="bg-[white] h-screen">
+      <Notification />
       <Nav />
     </div>
   )
