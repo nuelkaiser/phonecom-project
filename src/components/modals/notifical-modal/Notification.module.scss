@@ -1,0 +1,19 @@
+.modalContainer {
+    @apply hidden lg:fixed left-0 top-0 bottom-0 w-3/5 h-full bg-black opacity-40 lg:flex justify-end 
+}
+
+.notificationContainer {
+    @apply bg-white w-screen h-screen pt-9 lg:pt-28 px-7 lg:w-2/4 fixed top-[110px] lg:top-0 right-0 
+}
+
+.checkOutContainer {
+    @apply flex flex-col bg-red-600 absolute bottom-0 w-full border-t-4 border-t-[#F5F5F5]
+}
+
+.closeIcon {
+    @apply  hidden lg:block absolute top-8 right-8 cursor-pointer
+}
+
+.cartItems {
+    @apply overflow-y-scroll
+}
