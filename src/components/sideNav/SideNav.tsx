@@ -14,10 +14,13 @@ import { P, P2 } from '../shared/headings/Heading';
 import styles from './SideNav.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SideNavProps from './SideNav.props';
 
-const SideNav = () => {
+const SideNav: React.FC<SideNavProps> = ({
+    cart
+}) => {
+
     const router = useRouter();
-    
     return (
         <div>
             <div className={styles.sideNavContainer}>
@@ -94,7 +97,7 @@ const SideNav = () => {
                 </div>
             </div>
 
-            <div className={styles.sideNavMobile}>
+            <div className={cart ? styles.navCartMoible : styles.sideNavMobile}>
                 <div className={styles.sideNavLinksContainer}>
                     <Link href='/'>
                         <div className={router.pathname === '/' ? styles.sideNavLinksActive : styles.sideNavLinks}>

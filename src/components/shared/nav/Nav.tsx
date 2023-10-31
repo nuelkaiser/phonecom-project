@@ -17,8 +17,19 @@ import { P2 } from "../headings/Heading";
 import Button from "../buttons/Button";
 import Checkbox from "../inputs/checkbox/Checkbox";
 import SearchBar from "../inputs/searchbar/SearchBar";
+import NotificationModal from '@/components/modals/notifical-modal/Notification';
+import CartModal from "@/components/modals/cart-modal/Cart";
+import NavProps from "./Nav.props";
 
-const Nav = () => {
+
+const Nav: React.FC<NavProps> = (
+  {
+    notify,
+    cart,
+    handleCart,
+    handleNotify
+  }
+) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [option, setOption] = useState(false);
 
@@ -38,8 +49,16 @@ const Nav = () => {
     setOption(!option);
   };
 
+
   return (
     <div className="w-full">
+
+      <div>
+        <CartModal open={cart} handleCartModal={handleCart}/>
+        <NotificationModal open={notify} handleNotificationModal={handleNotify} />
+      </div>
+
+
       <div
         className={
           openMenu
@@ -55,10 +74,10 @@ const Nav = () => {
         </div>
 
         <div className="flex items-center gap-2  md:hidden">
-          <div className="rounded-full bg-[#F5F4F7] p-2 border border-[#E0F3EC] cursor-pointer">
+          <div onClick={handleCart} className="rounded-full bg-[#F5F4F7] p-2 border border-[#E0F3EC] cursor-pointer">
             <Cart />
           </div>
-          <div className="rounded-full bg-[#F5F4F7] p-2 border border-[#E0F3EC] cursor-pointer">
+          <div onClick={handleNotify} className="rounded-full bg-[#F5F4F7] p-2 border border-[#E0F3EC] cursor-pointer">
             <Bell />
           </div>
           <Image src={Profile} alt="profile" className="cursor-pointer" />
@@ -77,17 +96,17 @@ const Nav = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center cursor-pointer">
             <Wishlist />
             <P2>Wishlist</P2>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div onClick={handleCart} className="flex flex-col items-center cursor-pointer">
             <Cart />
             <P2>My Cart</P2>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div  onClick={handleNotify}  className="flex flex-col items-center cursor-pointer">
             <Bell />
             <P2>Notification</P2>
           </div>
