@@ -1,9 +1,9 @@
 .modalContainer {
-    @apply hidden lg:fixed left-0 top-0 bottom-0 w-3/5 h-full bg-black opacity-40 lg:flex justify-end 
+    @apply hidden lg:fixed left-0 top-0 bottom-0 w-3/5 h-full bg-black z-50 opacity-40 lg:flex justify-end 
 }
 
 .notificationContainer {
-    @apply bg-white w-screen h-screen pt-9 lg:pt-28 px-7 lg:w-2/4 fixed top-[110px] lg:top-0 right-0 
+    @apply bg-white w-screen h-screen pt-9 lg:pt-28 px-7 lg:w-2/4 lg:z-50 fixed top-[110px] lg:top-0 right-0 
 }
 
 .checkOutContainer {
