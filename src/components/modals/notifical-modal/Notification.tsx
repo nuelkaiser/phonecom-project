@@ -7,27 +7,28 @@ import Image from "next/image";
 import Notify from "@/assets/images/notification-image.png";
 import NotificationMessage from "@/components/notification-message/NotificationMessage";
 import Profile from "@/assets/images/profile.png";
+import NotificationProps from "./Notification.props";
 
-const Notification = () => {
-  const [modal, setModal] = useState(true);
-  const handleModal = () => {
-    setModal(!modal);
-  };
+const Notification: React.FC<NotificationProps> = ({
+  open,
+  handleNotificationModal
+}) => {
+
   return (
-    <div className={modal ? `flex flex-col` : `hidden`}>
+    <div className={open ? `flex flex-col` : `hidden`}>
       <div className={styles.modalContainer}></div>
 
       <div className={styles.notificationContainer}>
-        <Close className={styles.closeIcon} onClick={handleModal} />
+        <Close className={styles.closeIcon} onClick={handleNotificationModal} />
 
         <div>
-          <div className="flex items-center gap-4 mb-5">
+          <div className="flex items-center gap-4 px-7 mb-5">
             <Image src={Notify} alt="notifiy" className="lg:hidden" />
 
             <H4 className="text-[#3E3838] font-bold">Notification</H4>
           </div>
 
-          <div className="overflow-y-scroll h-[500px] lg:h-screen">
+          <div className="overflow-y-scroll h-[500px] px-7 lg:h-screen">
             <NotificationMessage
               title="Welcome to Phonecom"
               message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
