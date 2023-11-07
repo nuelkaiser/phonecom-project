@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Nav from "@/components/shared/nav/Nav";
 import SideNav from "@/components/sideNav/SideNav";
-import CategoryCard from "@/components/category-card/CategoryCard";
-import Watch from "@/assets/images/product-watch.png";
+import ProductCard from "@/components/products-card/ProductCard";
+import ProductImg from "@/assets/images/product-image.png";
+import Notification from "@/components/modals/notifical-modal/Notification";
 
 const index = () => {
   const [openNotificationModal, setOpenNotificationModal] = useState(false);
@@ -17,22 +18,66 @@ const index = () => {
   };
 
   return (
-    <div className=" h-full bg-[#606060] md:flex">
-      <SideNav cart={openCartModal} />
+    <div className="bg-[white] h-screen">
+      <div className="bg-[#98A2B3] md:flex">
+        <SideNav cart={openCartModal} />
+        <div className="w-full">
+          <div className="lg:ml-32 min-[1440px]:ml-64">
+            <Nav
+              notify={openNotificationModal}
+              cart={openCartModal}
+              handleNotify={handleNotificationModal}
+              handleCart={handleCartModal}
+            />
+          </div>
 
-      <div className=" w-full">
-        <Nav
-          notify={openNotificationModal}
-          cart={openCartModal}
-          handleNotify={handleNotificationModal}
-          handleCart={handleCartModal}
-        />
+          <div className="lg:ml-32 min-[1440px]:ml-64 grid grid-cols-2 pt-14 pb-28 px-9 items-center gap-4">
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
 
-        <div className=" hidden lg:flex gap-5 px-8">
-          <CategoryCard productName="iWatches" productImg={Watch} />
-          <CategoryCard productName="Chargers" productImg={Watch} />
-          <CategoryCard productName="Screen Guards" productImg={Watch} />
-          <CategoryCard productName="iWatches" productImg={Watch} />
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
+
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
+
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
+            <ProductCard
+              productimage={ProductImg}
+              productname="Bro Toumi Toumi CMCC PAD1 10.1 ...."
+              productprice="N12,000"
+              className=""
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 .sideNavContainer {
-    @apply hidden lg:flex md:flex-col md:justify-between md:bg-white md:border-r md:border-[#EAEDEC] md:h-screen md:px-9 md:py-12
+    @apply hidden lg:flex md:flex-col md:justify-between md:bg-white md:border-r md:border-[#EAEDEC] fixed top-0 bottom-0 left-0 md:h-screen md:px-9 md:py-12
 }
 
 .sideNavLinksContainer {
