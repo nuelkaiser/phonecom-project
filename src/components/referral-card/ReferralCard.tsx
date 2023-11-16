@@ -11,8 +11,8 @@ import Bg2 from "@/assets/icons/referral-bg-2.svg";
 
 const ReferalCard: React.FC<ReferralCardProps> = ({}) => {
   return (
-    <div className={`${styles.referralCardContainer} h-60 py-4 px-6`}>
-      <div className="flex flex-col gap-9">
+    <div className={`${styles.referralCardContainer} h-60 pt-14 pb-10 px-6`}>
+      <div className="flex flex-col lg:gap-[6rem] ">
         <div>
           <H4 className="mb-1 text-white">Make a Referral and Earn</H4>
           <P2 className="text-white">
