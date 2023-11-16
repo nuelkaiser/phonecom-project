@@ -1,40 +1,39 @@
 .H1 {
-    @apply font-sans font-semibold text-[40px] text-[#344054] leading-[48px] 
+  @apply font-sans font-semibold text-[40px] text-[#344054] leading-[48px];
 }
 
 .H2 {
-    @apply font-sans font-semibold text-4xl text-[#344054] leading-[43px] 
+  @apply font-sans font-semibold text-4xl text-[#344054] leading-[43px];
 }
 
 .H3 {
-    @apply font-sans font-semibold text-[32px] text-[#344054] leading-[38px]
+  @apply font-sans font-semibold text-[32px] leading-[38px];
 }
 
 .H4 {
-    @apply font-sans font-semibold text-[28px] text-[#344054] leading-[33px]
+  @apply font-sans font-semibold text-[28px] leading-[33px];
 }
 
 .H5 {
-    @apply font-sans font-semibold text-2xl text-[#344054] leading-7 
+  @apply font-sans font-semibold text-2xl text-[#344054] leading-7;
 }
 
 .H6 {
-    @apply font-sans font-semibold text-xl text-[#344054] leading-6
+  @apply font-sans font-semibold text-xl leading-6;
 }
 
 .P {
-    @apply font-sans text-sm md:text-base text-[#344054] leading-6
+  @apply font-sans text-sm md:text-base text-[#344054] leading-6;
 }
 
 .P2 {
-    @apply font-sans text-base leading-6
+  @apply font-sans text-base leading-6;
 }
 
 .Small {
-  @apply font-sans font-medium text-5xl text-[#101928] leading-[48px] 
+  @apply font-sans font-medium text-5xl text-[#101928] leading-[48px];
 }
 
 .Large {
-  @apply font-sans font-medium text-[56px] text-[#101928] leading-[56px] 
+  @apply font-sans font-medium text-[56px] text-[#101928] leading-[56px];
 }
-

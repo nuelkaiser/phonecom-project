@@ -1,0 +1,30 @@
+.referralCardContainer {
+    display: none;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    border-radius: 6px;
+    background: linear-gradient(314deg, #277F59 -2.5%, #02BF6F 124.2%);
+    width: 50%;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+ .referralCardContainer {
+    display: flex;
+ }   
+}
+
+@media (min-width: 1024px) {
+ .referralCardContainer {
+    display: flex;
+    justify-content: initial;
+ } 
+
+}
+@media (min-width: 1440px) {
+ .referralCardContainer {
+    width: 60%;
+    justify-content: space-between;
+ }   
+}

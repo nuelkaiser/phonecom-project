@@ -10,7 +10,7 @@ const CategoryCard: React.FC<CategoryProps> = ({
     ...rest
 }) => {
   return (
-    <div className='bg-white px-6 py-2 rounded-md flex items-center justify-center gap-2 w-3/12'>
+    <div className='bg-white px-6 py-2 rounded-md flex items-center justify-center gap-2'>
         <P>{productName}</P>
 
         <Image src={productImg} alt='productName' />
