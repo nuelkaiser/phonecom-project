@@ -23,7 +23,7 @@
 }
 
 .sideNavMobile {
-    @apply flex items-center justify-between fixed bottom-0 bg-white pt-3 pb-10 px-8 w-full lg:hidden z-20
+    @apply flex items-center justify-between fixed bottom-0 bg-white pt-3 pb-10 px-8 w-full lg:hidden z-20 border-t border-t-[#EAEDEC]
 }
 
 .navCartMoible {
